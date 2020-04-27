@@ -1,0 +1,5 @@
+
+
+1. 调用 vector.index （在 vector 中）
+
+2. 获取结果 true 或 false（在 addIfNotExist 中）
