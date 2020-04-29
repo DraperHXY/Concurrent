@@ -22,7 +22,6 @@ public class GuardedObject<T> {
         lock.lock();
         try {
             while (!p.test(obj)) {
-
                 done.await(timeout, TimeUnit.SECONDS);
             }
         } catch (InterruptedException e) {
@@ -41,11 +40,6 @@ public class GuardedObject<T> {
         } finally {
             lock.unlock();
         }
-    }
-
-    public static void main(String[] args) {
-        GuardedObject o = new GuardedObject<>();
-        o.get(o1 -> 1 == (2 - 1));
     }
 
 }

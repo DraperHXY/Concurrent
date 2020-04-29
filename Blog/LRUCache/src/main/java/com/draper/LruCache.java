@@ -41,6 +41,7 @@ public class LruCache<K, V> {
                 removeOldestKey();
             }
             cache.put(key, value);
+            queue.add(key);
             return value;
         } finally {
             writeLock.unlock();

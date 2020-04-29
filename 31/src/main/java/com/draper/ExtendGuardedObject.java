@@ -2,6 +2,7 @@ package com.draper;
 
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
@@ -57,11 +58,6 @@ public class ExtendGuardedObject<T> {
         } finally {
             lock.unlock();
         }
-    }
-
-    public static void main(String[] args) {
-        ExtendGuardedObject o = new ExtendGuardedObject<>();
-        o.get(o1 -> 1 == (2 - 1));
     }
 
 }
